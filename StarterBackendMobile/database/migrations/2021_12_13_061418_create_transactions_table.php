@@ -15,10 +15,18 @@ class CreateTransactionsTable extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category_id')->constrained();
-            $table->date('transaction_date');
-            $table->integer('amount');
-            $table->string('description');
+
+            $table->bigInteger('users_id');
+
+            $table->text('address')->nullable();
+
+            $table->float('total_price')->default(0);
+            $table->float('shipping_price')->default(0);
+            $table->string('status')->default('PENDING');
+
+            $table->string('payment')->default('MANUAL');
+
+            $table->softDeletes();
             $table->timestamps();
         });
     }
