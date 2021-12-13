@@ -18,13 +18,15 @@ class CreateTransactionsTable extends Migration
 
             $table->bigInteger('users_id');
 
+            $table->string('name')->nullable();
+            $table->string('email')->nullable();
             $table->text('address')->nullable();
+            $table->string('phone')->nullable();
 
-            $table->float('total_price')->default(0);
-            $table->float('shipping_price')->default(0);
-            $table->string('status')->default('PENDING');
-
-            $table->string('payment')->default('MANUAL');
+            $table->string('courier')->nullable();
+            
+            $table->string('payment')->default('MIDTRANS');
+            $table->string('payment_url')->nullable();
 
             $table->softDeletes();
             $table->timestamps();
