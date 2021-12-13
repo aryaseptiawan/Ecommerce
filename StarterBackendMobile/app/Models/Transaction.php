@@ -2,42 +2,25 @@
 
 namespace App\Models;
 
-use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Transaction extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
-    protected $fillable = ['category_id', 'transaction_date', 'amount', 'description', 'user_id'];
-
-    protected $dates = ['transaction_date'];
-
-    public function category()
+    protected $fillable = [
+        'users_id', 'address', 'payment', 'total_price', 'shipping_price', 'status'
+    ];
+    
+    public function user()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(User::class, 'users_id', 'id');
     }
 
-    public function setAmountAttribute($value)
+    public function items()
     {
-        $this->attributes['amount'] = $value * 100;
+        return $this->hasMany(TransactionItem::class, 'transactions_id', 'id');
     }
-
-    public function setTransactionDateAttribute($value)
-    {
-        $this->attributes['transaction_date'] = Carbon::createFromFormat('m/d/Y', $value)
-            ->format('Y-m-d');
-    }
-
-    protected static function booted()
-    {
-        if (auth()->check()) {
-            static::addGlobalScope('by_user', function (Builder $builder) {
-                $builder->where('user_id', auth()->id());
-            });
-        }
-    }
-
 }
