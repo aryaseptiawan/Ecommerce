@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:my_first_app/theme.dart';
+import 'package:ecommerce/theme.dart';
 
 class SplashPage extends StatefulWidget {
   @override
@@ -15,7 +15,6 @@ class _SplashPageState extends State<SplashPage> {
     Timer(
       Duration(seconds: 3),
       () => Navigator.pushNamed(context, '/sign-in'),
-
     );
 
     super.initState();
@@ -39,5 +38,5 @@ class _SplashPageState extends State<SplashPage> {
         ),
       ),
     );
- }
+  }
 }
