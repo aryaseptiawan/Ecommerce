@@ -2,7 +2,7 @@ import 'dart:html';
 import 'package:flutter/material.dart';
 import 'package:ecommerce/theme.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:ecommerce/pages/detail_chat_page.dart';
+
 
 class ProductPage extends StatefulWidget {
 
