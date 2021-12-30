@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:ecommerce/pages/cart_page.dart';
 import 'package:ecommerce/pages/sign_in_page.dart';
 import 'package:ecommerce/pages/splash_page.dart';
 import 'package:ecommerce/pages/sign_up_page.dart';
 import 'package:ecommerce/pages/home/main_page.dart';
+import 'package:ecommerce/pages/product_page.dart';
 import 'package:ecommerce/pages/detail_chat_page.dart';
 
 void main() {
@@ -20,6 +22,8 @@ class MyApp extends StatelessWidget {
         '/sign-up': (context) => SignUpPage(),
         '/home': (context) => MainPage(),
         '/detail-chat': (context) => DetailChatPage(),
+        '/product': (context) => ProductPage(),
+        '/cart': (context) => CartPage(),
       },
     ); //MaterialApp
   }
