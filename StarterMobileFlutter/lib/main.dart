@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ecommerce/pages/cart_page.dart';
+import 'package:ecommerce/pages/checkout_page.dart';
+import 'package:ecommerce/pages/checkout_success_page.dart';
 import 'package:ecommerce/pages/sign_in_page.dart';
 import 'package:ecommerce/pages/splash_page.dart';
 import 'package:ecommerce/pages/sign_up_page.dart';
@@ -24,6 +26,8 @@ class MyApp extends StatelessWidget {
         '/detail-chat': (context) => DetailChatPage(),
         '/product': (context) => ProductPage(),
         '/cart': (context) => CartPage(),
+        '/checkout': (context) => CheckoutPage(),
+        '/checkout-success': (context) => CheckoutSuccessPage(),
       },
     ); //MaterialApp
   }
