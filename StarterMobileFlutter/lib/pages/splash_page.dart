@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:ecommerce/theme.dart';
 
 class SplashPage extends StatefulWidget {
+  const SplashPage({Key? key}) : super(key: key);
+  
   @override
   _SplashPageState createState() => _SplashPageState();
 }
